@@ -671,7 +671,6 @@ C:\Users\Mathias\Documents\GitHubVisualStudio\T-Mission-Tablet\HelloWorld\HelloW
 C:\Users\Mathias\Documents\GitHubVisualStudio\T-Mission-Tablet\HelloWorld\HelloWorld\bin\x86\Debug\System.Xml.XDocument.dll
 C:\Users\Mathias\Documents\GitHubVisualStudio\T-Mission-Tablet\HelloWorld\HelloWorld\bin\x86\Debug\System.Xml.XmlDocument.dll
 C:\Users\Mathias\Documents\GitHubVisualStudio\T-Mission-Tablet\HelloWorld\HelloWorld\bin\x86\Debug\System.Xml.XmlSerializer.dll
-C:\Users\Mathias\Documents\GitHubVisualStudio\T-Mission-Tablet\HelloWorld\HelloWorld\obj\x86\Debug\HelloWorld.csprojResolveAssemblyReference.cache
 C:\Users\Mathias\Documents\GitHubVisualStudio\T-Mission-Tablet\HelloWorld\HelloWorld\obj\x86\Debug\App.g.i.cs
 C:\Users\Mathias\Documents\GitHubVisualStudio\T-Mission-Tablet\HelloWorld\HelloWorld\obj\x86\Debug\App.g.cs
 C:\Users\Mathias\Documents\GitHubVisualStudio\T-Mission-Tablet\HelloWorld\HelloWorld\obj\x86\Debug\MainPage.g.i.cs
