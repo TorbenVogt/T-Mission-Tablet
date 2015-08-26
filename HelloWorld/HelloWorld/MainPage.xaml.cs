@@ -29,7 +29,7 @@ namespace HelloWorld
 
         private void inputButton_Click(object sender, RoutedEventArgs e)
         {
-            greetingOutput.Text = "Hello mr. Scholar and gentleman " + nameInput.Text + "!";
+            greetingOutput.Text = "Hello mr. Scholar and gentleman " + nameInput.Text + "!" + " How are you?";
         }
     }
 }
