@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,12 +34,14 @@ namespace HelloWorld
 
         }
 
-        static async void ReadOurXML()
+        static void ReadOurXML()
         {
 
             Windows.Storage.StorageFolder installedLocation = Windows.ApplicationModel.Package.Current.InstalledLocation;
             
-            XDocument booksFromFile = XDocument.Load(installedLocation.Path + @"\Assets" + @"\dummy.xml");
+            XDocument booksFromFile = XDocument.Load(Path.Combine(installedLocation.Path, Common.Constants.FolderNames.AssetsFolder, "dummy.xml"));
+
+
         }
 
     }
