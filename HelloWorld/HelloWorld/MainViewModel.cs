@@ -37,8 +37,8 @@ namespace HelloWorld
         {
 
             Windows.Storage.StorageFolder installedLocation = Windows.ApplicationModel.Package.Current.InstalledLocation;
-            installedLocation.
-            XDocument booksFromFile = XDocument.Load( @"C:\Users\MathiasHoffmann\Documents\GitHub\T-Mission-Tablet\HelloWorld\HelloWorld\bin\x86\Debug\AppX\Assets\dummy.xml");
+            
+            XDocument booksFromFile = XDocument.Load(installedLocation.Path + @"\Assets" + @"\dummy.xml");
         }
 
     }
