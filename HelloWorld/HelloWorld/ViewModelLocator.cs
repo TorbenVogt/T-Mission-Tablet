@@ -16,7 +16,7 @@ namespace HelloWorld
         public ViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
-            
+
             if (ViewModelBase.IsInDesignModeStatic)
             {
               //  SimpleIoc.Default.Register<IDataService, Design.DesignDataService>();
