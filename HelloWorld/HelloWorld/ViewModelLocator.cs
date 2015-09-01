@@ -5,7 +5,7 @@ using GalaSoft.MvvmLight.Command;
 using Microsoft.Practices.ServiceLocation;
 
 
-namespace HelloWorld
+namespace TMissionMobile
 {
     
 

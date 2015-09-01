@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace HelloWorld
+namespace TMissionMobile
 {
     public class MainViewModel : ViewModelBase 
     {
