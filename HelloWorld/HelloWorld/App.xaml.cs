@@ -15,6 +15,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+// The Blank Application template is documented at http://go.microsoft.com/fwlink/p/?LinkID=234227
+
 namespace TMissionMobile
 {
     /// <summary>
@@ -29,8 +31,8 @@ namespace TMissionMobile
         public App()
         {
             Microsoft.ApplicationInsights.WindowsAppInitializer.InitializeAsync(
-                Microsoft.ApplicationInsights.WindowsCollectors.Metadata |
-                Microsoft.ApplicationInsights.WindowsCollectors.Session);
+            Microsoft.ApplicationInsights.WindowsCollectors.Metadata |
+            Microsoft.ApplicationInsights.WindowsCollectors.Session);
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
@@ -42,7 +44,6 @@ namespace TMissionMobile
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
             {
@@ -58,16 +59,19 @@ namespace TMissionMobile
             {
                 // Create a Frame to act as the navigation context and navigate to the first page
                 rootFrame = new Frame();
+                // Set the default language
+                rootFrame.Language = Windows.Globalization.ApplicationLanguages.Languages[0];
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
-                if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
+                //  Display an extended splash screen if app was not previously running.
+                if (e.PreviousExecutionState != ApplicationExecutionState.Running)
                 {
-                    //TODO: Load state from previously suspended application
+                    bool loadState = (e.PreviousExecutionState == ApplicationExecutionState.Terminated);
+                    ExtendedSplash extendedSplash = new ExtendedSplash(e.SplashScreen, loadState);
+                    rootFrame.Content = extendedSplash;
+                    Window.Current.Content = rootFrame;
                 }
-
-                // Place the frame in the current Window
-                Window.Current.Content = rootFrame;
             }
 
             if (rootFrame.Content == null)
@@ -101,7 +105,7 @@ namespace TMissionMobile
         private void OnSuspending(object sender, SuspendingEventArgs e)
         {
             var deferral = e.SuspendingOperation.GetDeferral();
-            //TODO: Save application state and stop any background activity
+            // TODO: Save applicaiton state and stop any background activity
             deferral.Complete();
         }
     }
