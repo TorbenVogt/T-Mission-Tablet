@@ -1,0 +1,17 @@
+﻿<Page
+    x:Class="TMissionMobile.LogInView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TMissionMobile"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="White">
+        <Canvas>
+            <Image Width="800" Height="600" x:Name="extendedSplashImage"/>
+            <Button x:Name="LoginTechnicianBtn" Content="Technician" Width="100" Canvas.Left="51" Canvas.Top="437" />
+            <Button x:Name="LoginPilotBtn" Content="Pilot" Width="100" Canvas.Left="195" Canvas.Top="437" />
+        </Canvas>
+    </Grid>
+</Page>
