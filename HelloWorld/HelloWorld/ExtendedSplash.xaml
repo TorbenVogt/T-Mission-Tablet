@@ -9,7 +9,7 @@
 
         <Grid Background="White">
             <Canvas>
-                <Image Width="800" Height="600" x:Name="extendedSplashImage" Source="Assets/t-mark-black.jpg"/>
+                <Image Width="800" Height="600" x:Name="extendedSplashImage" Source="Assets/t-mark-black.png"/>
                 <ProgressRing Name="splashProgressRing" IsActive="True" Width="20" HorizontalAlignment="Center"></ProgressRing>
             </Canvas>
         </Grid>
