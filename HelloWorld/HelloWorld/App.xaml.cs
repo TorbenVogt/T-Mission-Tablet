@@ -68,7 +68,7 @@ namespace TMissionMobile
                 if (e.PreviousExecutionState != ApplicationExecutionState.Running)
                 {
                     bool loadState = (e.PreviousExecutionState == ApplicationExecutionState.Terminated);
-                    ExtendedSplash extendedSplash = new ExtendedSplash(e.SplashScreen, loadState);
+                    ExtendedSplash extendedSplash = new ExtendedSplash(e.SplashScreen);
                     rootFrame.Content = extendedSplash;
                     Window.Current.Content = rootFrame;
                 }

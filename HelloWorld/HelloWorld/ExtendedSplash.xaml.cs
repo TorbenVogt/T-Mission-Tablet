@@ -1,20 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-
 using Windows.ApplicationModel.Activation;
-using TMissionMobile.Common;
 using Windows.UI.Core;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/p/?LinkID=234238
@@ -31,7 +19,7 @@ namespace TMissionMobile
         internal bool dismissed = false; // Variable to track splash screen dismissal status.
         internal Frame rootFrame;
 
-        public ExtendedSplash(SplashScreen splashscreen, bool loadState)
+        public ExtendedSplash(SplashScreen splashscreen)
         {
             InitializeComponent();
 
@@ -44,7 +32,7 @@ namespace TMissionMobile
             if (splash != null)
             {
                 // Register an event handler to be executed when the splash screen has been dismissed.
-                splash.Dismissed += new TypedEventHandler<SplashScreen, Object>(DismissedEventHandler);
+                splash.Dismissed += DismissedEventHandler;
 
                 // Retrieve the window coordinates of the splash screen image.
                 splashImageRect = splash.ImageLocation;
@@ -57,16 +45,9 @@ namespace TMissionMobile
             // Create a Frame to act as the navigation context
             rootFrame = new Frame();
 
-            // Restore the saved session state if necessary
-           // await RestoreStateAsync(loadState);
-        }
+      
 
-        async void RestoreStateAsync(bool loadState)
-        {
-            if (loadState)
-            {
-                // TODO: write code to load state
-            }
+
         }
 
         // Position the extended splash screen image in the same location as the system splash screen image.
@@ -101,8 +82,8 @@ namespace TMissionMobile
         void DismissedEventHandler(SplashScreen sender, object e)
         {
             dismissed = true;
-
             // Complete app setup operations here...
+
         }
 
         void DismissExtendedSplash()
