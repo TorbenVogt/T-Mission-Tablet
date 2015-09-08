@@ -4,6 +4,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Core;
+using TMissionMobile.Views;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/p/?LinkID=234238
 
@@ -89,7 +90,8 @@ namespace TMissionMobile
         void DismissExtendedSplash()
         {
             // Navigate to mainpage
-            rootFrame.Navigate(typeof(MainPage));
+
+            rootFrame.Navigate(typeof(LoginView));
             // Place the frame in the current Window
             Window.Current.Content = rootFrame;
         }
