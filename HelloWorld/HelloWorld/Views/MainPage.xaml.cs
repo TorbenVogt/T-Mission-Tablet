@@ -17,7 +17,7 @@ namespace TMissionMobile
         {
             InitializeComponent();
 
-            this.InitializeComponent();
+            
 
            
 
