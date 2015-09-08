@@ -1,12 +1,9 @@
-
 using Windows.UI.Xaml;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 using Windows.UI.Xaml.Controls;
-using System.Xml;
+
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace TMissionMobile
+namespace TMissionMobile.Views
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.

@@ -2,9 +2,9 @@
     x:Class="TMissionMobile.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:TMissionMobile"
+    xmlns:utilities="using:TMissionMobile.Utilities"
     RequestedTheme="Light">
     <Application.Resources>
-        <local:ViewModelLocator x:Key="Locator" />
+        <utilities:ViewModelLocator x:Key="Locator" />
     </Application.Resources>
 </Application>

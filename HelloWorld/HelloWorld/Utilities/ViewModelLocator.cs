@@ -1,11 +1,9 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
-using GalaSoft.MvvmLight.Command;
-
 using Microsoft.Practices.ServiceLocation;
+using TMissionMobile.Viewmodels;
 
-
-namespace TMissionMobile
+namespace TMissionMobile.Utilities
 {
     
 

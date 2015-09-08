@@ -1,13 +1,9 @@
-﻿using GalaSoft.MvvmLight;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
+﻿using System.IO;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using GalaSoft.MvvmLight;
 
-namespace TMissionMobile
+namespace TMissionMobile.Viewmodels
 {
     public class MainViewModel : ViewModelBase 
     {

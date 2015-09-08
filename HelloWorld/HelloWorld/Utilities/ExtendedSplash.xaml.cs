@@ -1,14 +1,14 @@
 ﻿using System;
+using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.ApplicationModel.Activation;
-using Windows.UI.Core;
 using TMissionMobile.Views;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/p/?LinkID=234238
 
-namespace TMissionMobile
+namespace TMissionMobile.Utilities
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
