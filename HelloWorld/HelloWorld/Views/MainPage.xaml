@@ -10,7 +10,7 @@
     >
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <RelativePanel HorizontalAlignment="Center">
+        <RelativePanel HorizontalAlignment="Center" Margin="64,0,560,0">
             <RelativePanel.Transform3D>
                 <media3D:PerspectiveTransform3D></media3D:PerspectiveTransform3D>
             </RelativePanel.Transform3D>

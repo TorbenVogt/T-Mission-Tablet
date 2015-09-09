@@ -8,10 +8,24 @@
     mc:Ignorable="d">
 
     <Grid Background="White">
-        <Canvas>
-            <Image Width="482" Height="398" x:Name="LogInImage" Source="../Assets/t-mark-black.png" Canvas.Left="274" Canvas.Top="39"/>
-            <Button x:Name="LoginTechnicianBtn" Content="Technician" Width="100" Canvas.Left="340" Canvas.Top="437" />
-            <Button x:Name="LoginPilotBtn" Content="Pilot" Width="100" Canvas.Left="592" Canvas.Top="437" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="449*" />
+            <RowDefinition Height="191*" />
+        </Grid.RowDefinitions>
+
+        <Canvas Grid.Row="0" Grid.RowSpan="2"  HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image Width="482" Height="398" x:Name="LogInImage" Source="../Assets/t-mark-black.png"/>
         </Canvas>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="108*"/>
+                <RowDefinition Height="83*"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Grid.Column="0" x:Name="LoginTechnicianBtn" Content="Technician" Width="191" Height="90" FontWeight="SemiBold" />
+            <Button  Grid.Row="0" x:Name="LoginPilotBtn" Content="Pilot" Width="194" Height="90" FontWeight="SemiBold" />
+        </Grid>
+
+
     </Grid>
 </Page>
