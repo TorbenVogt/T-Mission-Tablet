@@ -127,6 +127,11 @@ namespace TMissionMobile.Utilities
 
         void LogInTechnician_Click(object sender, RoutedEventArgs e)
         {
+            Windows.Storage.ApplicationDataContainer localSettings =
+            Windows.Storage.ApplicationData.Current.LocalSettings;
+
+            localSettings.Values["LoginUserId"] = "Technician";
+
             DismissExtendedSplash();
         }
     }

@@ -1,3 +1,4 @@
+using System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
@@ -14,9 +15,9 @@ namespace TMissionMobile.Views
         {
             InitializeComponent();
 
-            
 
-           
+
+
 
         }
 
@@ -24,8 +25,8 @@ namespace TMissionMobile.Views
         {
             //greetingOutput.Text = "Hello mr. Scholar and gentleman " + nameInput.Text + "!" + " How are you?";
         }
-            
 
-        
+
+
     }
 }
