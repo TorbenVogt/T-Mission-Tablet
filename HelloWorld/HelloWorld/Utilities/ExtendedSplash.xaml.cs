@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.UI.Core;
@@ -41,14 +42,32 @@ namespace TMissionMobile.Utilities
 
                 // Optional: Add a progress ring to your splash screen to show users that content is loading
                 PositionRing();
+                LoadXMLdata();
+
             }
 
             // Create a Frame to act as the navigation context
             rootFrame = new Frame();
 
+            
       
 
 
+        }
+
+        async void LoadXMLdata()
+        {
+            //Loads XML data
+            await Task.Delay(2500);
+            splashProgressRing.Visibility = Visibility.Collapsed;
+            ShowLogInBtns();
+        }
+
+        void ShowLogInBtns()
+        {
+            LoginTechnicianBtn.Visibility = Visibility.Visible;
+            LoginPilotBtn.Visibility = Visibility.Visible;
+            positionLogInBtn();
         }
 
         // Position the extended splash screen image in the same location as the system splash screen image.
@@ -67,6 +86,15 @@ namespace TMissionMobile.Utilities
             splashProgressRing.SetValue(Canvas.TopProperty, (splashImageRect.Y + splashImageRect.Height + splashImageRect.Height * 0.1));
         }
 
+        void positionLogInBtn()
+        {
+            LoginTechnicianBtn.SetValue(Canvas.LeftProperty, splashImageRect.X + (splashImageRect.Width * 0.1) - (LoginTechnicianBtn.Width * 0.1));
+            LoginTechnicianBtn.SetValue(Canvas.TopProperty, (splashImageRect.Y + splashImageRect.Height + splashImageRect.Height * 0.1));
+            
+            LoginPilotBtn.SetValue(Canvas.LeftProperty, splashImageRect.X + (splashImageRect.Width * 0.6) - (LoginTechnicianBtn.Width * 0.1));
+            LoginPilotBtn.SetValue(Canvas.TopProperty, (splashImageRect.Y + splashImageRect.Height + splashImageRect.Height * 0.1));
+        }
+
         void ExtendedSplash_OnResize(Object sender, WindowSizeChangedEventArgs e)
         {
             // Safely update the extended splash screen image coordinates. This function will be fired in response to snapping, unsnapping, rotation, etc...
@@ -76,6 +104,7 @@ namespace TMissionMobile.Utilities
                 splashImageRect = splash.ImageLocation;
                 PositionImage();
                 PositionRing();
+                positionLogInBtn();
             }
         }
 
@@ -96,7 +125,7 @@ namespace TMissionMobile.Utilities
             Window.Current.Content = rootFrame;
         }
 
-        void DismissSplashButton_Click(object sender, RoutedEventArgs e)
+        void LogInTechnician_Click(object sender, RoutedEventArgs e)
         {
             DismissExtendedSplash();
         }
