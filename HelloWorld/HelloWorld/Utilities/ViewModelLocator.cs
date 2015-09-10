@@ -27,7 +27,7 @@ namespace TMissionMobile.Utilities
             SimpleIoc.Default.Register<LoadOverviewModel>();
         }
         
-        public ViewModelBase MainViewModel
+        public ViewModelBase LoadOverviewModel
         {
             get { return SimpleIoc.Default.GetInstance<LoadOverviewModel>(); }
         }
