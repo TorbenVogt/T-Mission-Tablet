@@ -6,14 +6,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-        <Grid Background="White">
-            <Canvas>
-                <Image Width="800" Height="600" x:Name="extendedSplashImage" Source="../Assets/t-mark-black.png"/>
-                <ProgressRing Name="splashProgressRing" IsActive="True" Width="20" HorizontalAlignment="Center"/>
-             </Canvas>
-        <StackPanel Width="80" Height="30" VerticalAlignment="Bottom" >
-            <Button Click="DismissSplashButton_Click" Content="Dismiss Splash"></Button>
-        </StackPanel>
-        </Grid>
+    <Grid Background="White">
+        <Canvas>
+            <Image Width="800" Height="600" x:Name="extendedSplashImage" Source="../Assets/t-mark-black.png"/>
+            <ProgressRing Name="splashProgressRing" IsActive="True" Width="20" HorizontalAlignment="Center"/>
+            <Button Visibility="Collapsed" x:Name="LoginTechnicianBtn" Content="Technician"  Click="LogInTechnician_Click" Width="180" Height="50" FontWeight="SemiBold" FontSize="22"/>
+            <Button  Visibility="Collapsed" x:Name="LoginPilotBtn" Content="Pilot" Width="180" Height="50" FontWeight="SemiBold" FontSize="22" />
+        </Canvas>
+
+    </Grid>
 
 </Page>
