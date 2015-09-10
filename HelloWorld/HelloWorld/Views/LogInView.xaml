@@ -8,30 +8,10 @@
     mc:Ignorable="d">
 
     <Grid Background="White">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="449*" />
-            <RowDefinition Height="191*" />
-        </Grid.RowDefinitions>
-
-        <Canvas Grid.Row="0"  HorizontalAlignment="Center" Grid.RowSpan="2" >
-            <Image Width="482" Height="398" x:Name="LogInImage" Source="../Assets/t-mark-black.png" Canvas.Left="-242" Canvas.Top="146"/>
+        <Canvas>
+            <Image Width="482" Height="398" x:Name="LogInImage" Source="../Assets/t-mark-black.png" Canvas.Left="274" Canvas.Top="39"/>
+            <Button x:Name="LoginTechnicianBtn" Content="Technician" Width="100" Canvas.Left="340" Canvas.Top="437" />
+            <Button x:Name="LoginPilotBtn" Content="Pilot" Width="100" Canvas.Left="592" Canvas.Top="437" />
         </Canvas>
-
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="347*"/>
-                <ColumnDefinition Width="373*"/>
-                <ColumnDefinition Width="373*"/>
-                <ColumnDefinition Width="346*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="108*"/>
-                <RowDefinition Height="83*"/>
-            </Grid.RowDefinitions>
-            <Button  Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" x:Name="LoginTechnicianBtn" Content="Technician" Width="230" Height="130" FontWeight="SemiBold" FontSize="40"/>
-            <Button  Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" x:Name="LoginPilotBtn" Content="Pilot" Width="230" Height="130" FontWeight="SemiBold" FontSize="40" />
-        </Grid>
-
-
     </Grid>
 </Page>
