@@ -27,7 +27,6 @@ namespace TMissionMobile.Viewmodels
             Task task = new Task(ReadOurXML);
             task.Start();
 
-
         }
 
         static void ReadOurXML()
