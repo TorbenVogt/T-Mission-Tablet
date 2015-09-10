@@ -1,0 +1,22 @@
+﻿<Page
+    x:Class="TMissionMobile.Views.LoadOverviewView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding Path=MainViewModel, Source={StaticResource Locator}}" 
+    >
+    <Grid>
+    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+       <Image Source="../Assets/planeSidejpeg.jpg" Name="planeSideImage"  />
+            <RelativePanel Name="radioButtonPanel" RelativePanel.Below="planeSideImage"
+                    RelativePanel.AlignRightWith="planeSideImage">
+                <RadioButton GroupName="Orientation" Name="side" Content="Side"></RadioButton>
+                <RadioButton GroupName="Orientation" Name="bottom" RelativePanel.Below="side" Content="Bottom"></RadioButton>
+                <RadioButton GroupName="Orientation" Name="top" RelativePanel.Below="bottom" Content="Top"></RadioButton>
+            </RelativePanel>
+        </RelativePanel>
+    </Grid>
+
+</Page>
