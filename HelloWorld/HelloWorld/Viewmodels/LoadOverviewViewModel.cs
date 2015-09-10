@@ -5,7 +5,7 @@ using GalaSoft.MvvmLight;
 
 namespace TMissionMobile.Viewmodels
 {
-    public class MainViewModel : ViewModelBase 
+    public class LoadOverviewModel : ViewModelBase 
     {
        private int dummyValue = 3;
         
@@ -21,7 +21,7 @@ namespace TMissionMobile.Viewmodels
                 RaisePropertyChanged();
             }
         }
-        public MainViewModel()
+        public LoadOverviewModel()
         {
 
             Task task = new Task(ReadOurXML);

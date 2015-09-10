@@ -24,12 +24,12 @@ namespace TMissionMobile.Utilities
                 //SimpleIoc.Default.Register<IDataService, DataService>();
             }
 
-            SimpleIoc.Default.Register<LoadOverviewViewModel>();
+            SimpleIoc.Default.Register<LoadOverviewModel>();
         }
         
         public ViewModelBase MainViewModel
         {
-            get { return SimpleIoc.Default.GetInstance<LoadOverviewViewModel>(); }
+            get { return SimpleIoc.Default.GetInstance<LoadOverviewModel>(); }
         }
         
         

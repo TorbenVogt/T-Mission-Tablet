@@ -120,7 +120,7 @@ namespace TMissionMobile.Utilities
         {
             // Navigate to mainpage
 
-            rootFrame.Navigate(typeof(LoginView));
+            rootFrame.Navigate(typeof(LoadOverviewView));
             // Place the frame in the current Window
             Window.Current.Content = rootFrame;
         }

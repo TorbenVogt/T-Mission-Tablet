@@ -106,6 +106,7 @@
     <Compile Include="Utilities\ExtendedSplash.xaml.cs">
       <DependentUpon>ExtendedSplash.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Viewmodels\LoadOverviewViewModel.cs" />
     <Compile Include="Views\LoadOverviewView.xaml.cs">
       <DependentUpon>LoadOverviewView.xaml</DependentUpon>
     </Compile>
@@ -152,9 +153,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Viewmodels\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
