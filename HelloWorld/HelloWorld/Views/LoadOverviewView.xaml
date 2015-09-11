@@ -4,17 +4,20 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:utilities="using:TMissionMobile.Utilities"
     mc:Ignorable="d"
-    DataContext="{Binding Path=MainViewModel, Source={StaticResource Locator}}" 
+    DataContext="{Binding Path=LoadOverviewModel, Source={StaticResource Locator}}" 
     >
+    <Page.Resources>
+        <utilities:RadioBoolToUriConverter x:Key="RadioBoolToUriConverter"></utilities:RadioBoolToUriConverter>
+    </Page.Resources>
     <Grid>
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-       <Image Source="../Assets/planeSidejpeg.jpg" Name="planeSideImage"  />
-            <RelativePanel Name="radioButtonPanel" RelativePanel.Below="planeSideImage"
-                    RelativePanel.AlignRightWith="planeSideImage">
-                <RadioButton GroupName="Orientation" Name="side" Content="Side"></RadioButton>
-                <RadioButton GroupName="Orientation" Name="bottom" RelativePanel.Below="side" Content="Bottom"></RadioButton>
-                <RadioButton GroupName="Orientation" Name="top" RelativePanel.Below="bottom" Content="Top"></RadioButton>
+       <Image Source="{Binding PlaneImage}" Name="planeSideImage" Width="100" Height="100"  />
+            <RelativePanel Name="radioButtonPanel" RelativePanel.Below="planeSideImage" RelativePanel.AlignRightWith="planeSideImage">
+                <RadioButton GroupName="Orientation" IsChecked="{Binding Path=ImageUri,Mode=TwoWay, Converter={StaticResource RadioBoolToUriConverter}, ConverterParameter=Side}" Name="side" Content="Side"></RadioButton>
+                <RadioButton GroupName="Orientation" IsChecked="{Binding Path=ImageUri,Mode=TwoWay, Converter={StaticResource RadioBoolToUriConverter}, ConverterParameter=Bottom}" Name="bottom" RelativePanel.Below="side" Content="Bottom"></RadioButton>
+                <RadioButton GroupName="Orientation" IsChecked="{Binding Path=ImageUri,Mode=TwoWay, Converter={StaticResource RadioBoolToUriConverter}, ConverterParameter=Top, UpdateSourceTrigger=PropertyChanged}" Name="top" RelativePanel.Below="bottom" Content="Top"></RadioButton>
             </RelativePanel>
         </RelativePanel>
     </Grid>
