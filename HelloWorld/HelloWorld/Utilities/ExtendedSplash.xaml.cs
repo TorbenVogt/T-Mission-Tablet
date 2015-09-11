@@ -58,7 +58,7 @@ namespace TMissionMobile.Utilities
         async void LoadXMLdata()
         {
             //Loads XML data
-            await Task.Delay(2500);
+            await Task.Delay(200);
             splashProgressRing.Visibility = Visibility.Collapsed;
             ShowLogInBtns();
         }
@@ -125,6 +125,20 @@ namespace TMissionMobile.Utilities
             Window.Current.Content = rootFrame;
         }
 
+        void DismissAsAPilot()
+        {
+            // Navigate to mainpage
+
+            rootFrame.Navigate(typeof(TestViewForLoadSpec));
+            // Place the frame in the current Window
+            Window.Current.Content = rootFrame;
+        }
+
+        void LoginPilotBtn_Click(object sender, RoutedEventArgs e)
+        {
+            DismissAsAPilot();
+        }
+
         void LogInTechnician_Click(object sender, RoutedEventArgs e)
         {
             Windows.Storage.ApplicationDataContainer localSettings =
@@ -133,6 +147,14 @@ namespace TMissionMobile.Utilities
             localSettings.Values["LoginUserId"] = "Technician";
 
             DismissExtendedSplash();
+
+
+            // Load the app data for the setting LoginUserId
+
+            //Windows.Storage.ApplicationDataContainer localSettings =
+            //Windows.Storage.ApplicationData.Current.LocalSettings;
+
+            //Object value = localSettings.Values["LoginUserId"];
         }
     }
 }
