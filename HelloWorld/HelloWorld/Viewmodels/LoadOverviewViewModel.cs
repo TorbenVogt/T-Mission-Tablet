@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.IO;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Windows.UI.Xaml.Controls;
@@ -43,24 +45,34 @@ namespace TMissionMobile.Viewmodels
             }
         }
 
-        private Uri imageUri;
+        private Uri selectedImageUri;
 
-        public Uri ImageUri
+        public Uri SelectedImageUri
         {
-            get { return imageUri; }
+            get { return selectedImageUri; }
             set
             {
-                imageUri = value;
+                selectedImageUri = value;
                 RaisePropertyChanged();
             }
         }
 
+        ObservableCollection<Uri> ImageUris = new ObservableCollection<Uri>(); 
             
 
 
         public LoadOverviewModel()
         {
+            foreach (var p in typeof(Common.Constants.ImageUri).GetFields(BindingFlags.Static | BindingFlags.Public))
+            {
+                ImageUris.Add((Uri) p.GetValue(null));
+            }
+            
 
+            
+            
+
+             
             Task task = new Task(ReadOurXML);
             task.Start();
 
