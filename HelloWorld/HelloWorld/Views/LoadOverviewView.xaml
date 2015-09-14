@@ -10,15 +10,15 @@
     >
     <Grid>
         <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <Image Source="{Binding PlaneImage}" Name="planeSideImage" Width="100" Height="100"  />
-            <ListBox ItemsSource="{Binding}" SelectedItem="{Binding }">
+            <Image Source="{Binding CurrentImage}" Name="planeImage"   />
+            <ListBox ItemsSource="{Binding ImageUris}" Name="viewLbx" RelativePanel.Below="planeImage" SelectedItem="{Binding SelectedImageUri, Mode=TwoWay}">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="ListBoxItem">
                         <Setter Property="Template">
                             <Setter.Value>
                                 <ControlTemplate TargetType="ListBoxItem">
                                     <RadioButton Content="{TemplateBinding Content}"
-                                     IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsSelected}"/>
+                                     IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsSelected, Mode=TwoWay}"/>
                                 </ControlTemplate>
                             </Setter.Value>
                         </Setter>
