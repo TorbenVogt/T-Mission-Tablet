@@ -54,14 +54,10 @@ namespace TMissionMobile.Viewmodels
             {
                 selectedImageUri = value;
                 RaisePropertyChanged();
-                UpdateImage();
-            }
-        }
 
-        private void UpdateImage()
-        {
-            CurrentImage = "ms-appx:///Assets/"+selectedImageUri;
-        }
+                CurrentImage = "ms-appx:///Assets/" + selectedImageUri;
+            }
+        }      
 
         private ObservableCollection<string> imageUris;
 

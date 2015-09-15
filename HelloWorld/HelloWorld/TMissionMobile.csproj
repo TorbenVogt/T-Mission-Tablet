@@ -95,6 +95,8 @@
     </Content>
     <Content Include="Assets\Loads.PNG" />
     <Content Include="Assets\planeSide.jpg" />
+    <Content Include="Assets\planeSideButtonNotSelected.jpg" />
+    <Content Include="Assets\planeSideButtonSelected.jpg" />
     <Content Include="Assets\planeTop.jpg" />
     <Content Include="t-mark-black.scale-200.png" />
     <None Include="project.json" />
