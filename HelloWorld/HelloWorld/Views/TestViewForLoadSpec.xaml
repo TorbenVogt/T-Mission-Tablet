@@ -18,7 +18,10 @@
             <RowDefinition Height="317*"/>
         </Grid.RowDefinitions>
 
-        <Button Grid.Row="1" HorizontalAlignment="Right" Margin="0 0 20 0" Content="Normal Loads" x:Name="NormalLoads" Click="NormalLoads_click" Width="200" Height="100"></Button>
+        <Button Grid.Row="1" HorizontalAlignment="Right" Margin="0 0 400 0" Content="Normal Loads" x:Name="NormalLoads" Click="NormalLoads_click" Width="200" Height="100"></Button>
         <Button Grid.Row="1" Grid.Column="1" Margin="0 0 20 0" Name="CrazyLoads" Click="CrazyLoads_Click" Content="Crazy Loads" Width="200" Height="100"></Button>
     </Grid>
+
 </Page>
+    
+    

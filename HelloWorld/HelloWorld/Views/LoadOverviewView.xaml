@@ -8,9 +8,6 @@
     mc:Ignorable="d"
     DataContext="{Binding Path=LoadOverviewModel, Source={StaticResource Locator}}" 
     >
-    <Page.Resources>
-        <utilities:RadioBoolToUriConverter x:Key="RadioBoolToUriConverter"></utilities:RadioBoolToUriConverter>
-    </Page.Resources>
     <Grid>
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
        <Image Source="{Binding PlaneImage}" Name="planeSideImage" Width="100" Height="100"  />
