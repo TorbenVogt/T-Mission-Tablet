@@ -12,7 +12,7 @@
         <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
             <Grid Name="planeImage" >
                 <Image Source="{Binding CurrentImage}"   />
-                <Button Pre/>
+                <!--<Button Pre/>-->
             </Grid>
             
             <ListBox ItemsSource="{Binding ImageUris}" Name="viewLbx" RelativePanel.Below="planeImage" SelectedItem="{Binding SelectedImageUri, Mode=TwoWay}">
