@@ -9,14 +9,28 @@
     DataContext="{Binding Path=LoadOverviewModel, Source={StaticResource Locator}}" 
     >
     <Grid>
-    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-       <Image Source="{Binding PlaneImage}" Name="planeSideImage" Width="100" Height="100"  />
-            <RelativePanel Name="radioButtonPanel" RelativePanel.Below="planeSideImage" RelativePanel.AlignRightWith="planeSideImage">
-                <RadioButton GroupName="Orientation" IsChecked="{Binding Path=ImageUri,Mode=TwoWay, Converter={StaticResource RadioBoolToUriConverter}, ConverterParameter=Side}" Name="side" Content="Side"></RadioButton>
-                <RadioButton GroupName="Orientation" IsChecked="{Binding Path=ImageUri,Mode=TwoWay, Converter={StaticResource RadioBoolToUriConverter}, ConverterParameter=Bottom}" Name="bottom" RelativePanel.Below="side" Content="Bottom"></RadioButton>
-                <RadioButton GroupName="Orientation" IsChecked="{Binding Path=ImageUri,Mode=TwoWay, Converter={StaticResource RadioBoolToUriConverter}, ConverterParameter=Top, UpdateSourceTrigger=PropertyChanged}" Name="top" RelativePanel.Below="bottom" Content="Top"></RadioButton>
-            </RelativePanel>
+        <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <Grid Name="planeImage" >
+                <Image Source="{Binding CurrentImage}"   />
+                <Button Pre/>
+            </Grid>
+            
+            <ListBox ItemsSource="{Binding ImageUris}" Name="viewLbx" RelativePanel.Below="planeImage" SelectedItem="{Binding SelectedImageUri, Mode=TwoWay}">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListBoxItem">
+                                    <RadioButton Content="{TemplateBinding Content}"
+                                     IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsSelected, Mode=TwoWay}"/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
         </RelativePanel>
     </Grid>
 
 </Page>
+

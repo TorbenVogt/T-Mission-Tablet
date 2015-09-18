@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Windows.UI.Xaml.Controls;
@@ -28,39 +31,57 @@ namespace TMissionMobile.Viewmodels
         }
 
         private Image planeImage;
+        private string currentImage;
 
-        public Image PlaneImage
+        public string CurrentImage
         {
-            get { return planeImage; }
+            get { return currentImage; }
             set
             {
-                BitmapImage src = new BitmapImage();
-                src.UriSource = Common.Constants.ImageUri.PlaneTop;
-                planeImage = new Image();
-                planeImage.Source = src;
-                planeImage = value;
+                currentImage = value;
                 RaisePropertyChanged();
             }
         }
 
-        private Uri imageUri;
 
-        public Uri ImageUri
+        
+        private string selectedImageUri;
+
+        public string SelectedImageUri
         {
-            get { return imageUri; }
+            get { return selectedImageUri; }
             set
             {
-                imageUri = value;
+                selectedImageUri = value;
                 RaisePropertyChanged();
+
+                CurrentImage = "ms-appx:///Assets/" + selectedImageUri;
             }
-        }
+        }      
 
-            
+        private ObservableCollection<string> imageUris;
 
+        public ObservableCollection<string> ImageUris
+        {
+            get { return imageUris; }
+            set { imageUris = value;
+                  RaisePropertyChanged();}
+        } 
 
         public LoadOverviewModel()
         {
+            ImageUris = new ObservableCollection<string>();
 
+            foreach (var p in typeof(Common.Constants.ImageUri).GetFields(BindingFlags.Static | BindingFlags.Public))
+            {
+                ImageUris.Add(p.GetValue(null).ToString());
+            }
+            SelectedImageUri = ImageUris.First();
+
+            
+            
+
+             
             Task task = new Task(ReadOurXML);
             task.Start();
 
