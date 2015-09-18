@@ -1,0 +1,18 @@
+﻿<ContentDialog
+    x:Class="TMissionMobile.Views.LoadSpecDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TMissionMobile.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    PrimaryButtonText="Button1"
+    SecondaryButtonText="Back"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick">
+
+    <Grid Background="#F2F2F2" >
+        <Image Width="400" Height="400" Name="LoadsSpecs" Source="../Assets/Loads.PNG" Margin="0 25 0 0"/>
+    </Grid>
+    
+</ContentDialog>
