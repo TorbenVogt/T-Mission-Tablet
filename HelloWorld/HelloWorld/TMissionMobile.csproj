@@ -95,6 +95,8 @@
     </Content>
     <Content Include="Assets\homer-simpson.bmp" />
     <Content Include="Assets\LoadOnPlane.png" />
+    <Content Include="Assets\LoadOnPlaneGreen.png" />
+    <Content Include="Assets\LoadOnPlaneRed.png" />
     <Content Include="Assets\Loads.PNG" />
     <Content Include="Assets\planeSide.jpg" />
     <Content Include="Assets\planeTop.jpg" />
