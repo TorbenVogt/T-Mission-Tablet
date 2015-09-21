@@ -44,5 +44,6 @@ namespace TMissionMobile.Views
             Title = "Selected Load is " + value;
 
         }
+       
     }
 }

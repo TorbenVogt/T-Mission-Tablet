@@ -5,17 +5,17 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:utilities="using:TMissionMobile.Utilities"
+    
     mc:Ignorable="d"
     DataContext="{Binding Path=LoadOverviewModel, Source={StaticResource Locator}}" 
     >
-    <Grid>
-        <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <Grid Name="planeImage" >
-                <Image Source="{Binding CurrentImage}"   />
-                <!--<Button Pre/>-->
-            </Grid>
-            
-            <ListBox ItemsSource="{Binding ImageUris}" Name="viewLbx" RelativePanel.Below="planeImage" SelectedItem="{Binding SelectedImageUri, Mode=TwoWay}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Canvas Name="planeImage" >
+            <Image Source="{Binding CurrentImage}" Width="600" Height="400"  />
+            <Button Background="Transparent" Command="{Binding ChangeButtonCommand}" Canvas.Top="{Binding LoadImageTop}" Canvas.Left="{Binding LoadImageLeft}" >
+                <Image Width="50" Height="30" Source="{Binding LoadImageUri}"></Image>
+            </Button>
+            <ListBox ItemsSource="{Binding ImageUris}" Name="viewLbx" Canvas.Top="310" SelectedItem="{Binding SelectedImageUri, Mode=TwoWay}">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="ListBoxItem">
                         <Setter Property="Template">
@@ -29,7 +29,7 @@
                     </Style>
                 </ListBox.ItemContainerStyle>
             </ListBox>
-        </RelativePanel>
+        </Canvas>
     </Grid>
 
 </Page>

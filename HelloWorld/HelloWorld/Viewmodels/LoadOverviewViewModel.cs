@@ -5,34 +5,26 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using Microsoft.VisualBasic;
+using TMissionMobile.Views;
 
 namespace TMissionMobile.Viewmodels
 {
+    
+    
+
     public class LoadOverviewModel : ViewModelBase 
     {
-       private int dummyValue = 3;
-        
-       public int DummyValue
-        {
-            get
-            {
-                return dummyValue;
-            }
-            set
-            {
-                dummyValue = value;
-                RaisePropertyChanged();
-            }
-            
-        }
-
-        private Image planeImage;
+      
         private string currentImage;
-
+        /// <summary>
+        /// The property that the image binds to
+        /// </summary>
         public string CurrentImage
         {
             get { return currentImage; }
@@ -42,11 +34,11 @@ namespace TMissionMobile.Viewmodels
                 RaisePropertyChanged();
             }
         }
-
-
         
         private string selectedImageUri;
-
+        /// <summary>
+        /// The property that controls the selected image for the listbox
+        /// </summary>
         public string SelectedImageUri
         {
             get { return selectedImageUri; }
@@ -55,9 +47,88 @@ namespace TMissionMobile.Viewmodels
                 selectedImageUri = value;
                 RaisePropertyChanged();
 
-                CurrentImage = "ms-appx:///Assets/" + selectedImageUri;
+                CurrentImage = Common.Constants.FolderNames.AppxAssetsFolder + selectedImageUri;
             }
-        }      
+        }
+
+
+
+        private string loadImageUri = Common.Constants.FolderNames.AppxAssetsFolder +
+                                      Common.Constants.ButtonImageUri.PlaneButtonNotSelected;
+                
+        /// <summary>
+        /// the property that controls the uri for the plane button
+        /// </summary>
+        public string LoadImageUri 
+        {
+            get { return loadImageUri; }
+            set
+            {
+                loadImageUri = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        private int loadImageTop = 220;
+
+        /// <summary>
+        /// the property that controls the uri for the plane button
+        /// </summary>
+        public int LoadImageTop
+        {
+            get { return loadImageTop; }
+            set
+            {
+                loadImageTop = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        private int loadImageLeft = 298;
+
+        /// <summary>
+        /// the property that controls the uri for the plane button
+        /// </summary>
+        public int LoadImageLeft
+        {
+            get { return loadImageLeft; }
+            set
+            {
+                loadImageLeft = value;
+                RaisePropertyChanged();
+            }
+        }
+
+
+        private RelayCommand changeButtonCommand;
+
+        /// <summary>
+        /// Gets the ChangeButtonCommand
+        /// </summary>
+        public RelayCommand ChangeButtonCommand
+        {
+            get
+            {
+                return changeButtonCommand ?? (changeButtonCommand = new RelayCommand(
+                    ()=>
+                    {
+                        LoadImageUri = Common.Constants.FolderNames.AppxAssetsFolder + Common.Constants.ButtonImageUri.PlaneButtonSelected;
+                        
+                        LoadDialog();
+                    }
+                    ));
+            }
+        }
+
+        async void LoadDialog()
+        {
+
+            var contentDialog = new LoadSpecDialog();
+            contentDialog.HorizontalAlignment = HorizontalAlignment.Right;
+            contentDialog.HorizontalContentAlignment = HorizontalAlignment.Right;
+            await contentDialog.ShowAsync();
+        }
+
 
         private ObservableCollection<string> imageUris;
 
@@ -72,7 +143,7 @@ namespace TMissionMobile.Viewmodels
         {
             ImageUris = new ObservableCollection<string>();
 
-            foreach (var p in typeof(Common.Constants.ImageUri).GetFields(BindingFlags.Static | BindingFlags.Public))
+            foreach (var p in typeof(Common.Constants.PlaneImageUri).GetFields(BindingFlags.Static | BindingFlags.Public))
             {
                 ImageUris.Add(p.GetValue(null).ToString());
             }

@@ -13,9 +13,6 @@ namespace TMissionMobile.Viewmodels
 {
     class LoadSpecDialogViewModel : ViewModelBase
     {
-        public string DisplayedImage
-        {
-            get { return "ms-appx:///Assets/homer-simpson.bmp"; }
-        }
+        public string DisplayedImage => "ms-appx:///Assets/Loads.PNG";
     }
 }

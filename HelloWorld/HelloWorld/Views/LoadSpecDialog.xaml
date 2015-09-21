@@ -6,14 +6,44 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    PrimaryButtonText="Button1"
-    SecondaryButtonText="Back"
-    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
-    SecondaryButtonClick="ContentDialog_SecondaryButtonClick"
-    DataContext="{Binding Path=LoadSpecDialogViewModel, Source={StaticResource Locator}}" >
-
-    <Grid Background="#F2F2F2" Name="LoadImage" >
-        <Image Width="400" Height="400" Source="{Binding DisplayedImage}" Margin="0 25 0 0"/>
+    Background="GhostWhite"
+    FullSizeDesired="True"
+    HorizontalAlignment="Right"
+    PrimaryButtonText="Verify"
+    SecondaryButtonText="Cancel"
+    DataContext="{Binding Path=LoadSpecDialogViewModel, Source={StaticResource Locator}}" CanDrag="True" >
+    <ContentDialog.Resources>
+        <Style x:Key="verifyBtn" TargetType="Button">
+            <Setter Property="Content">
+                <Setter.Value>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="../Assets/checkmark.png" Width="20"/>
+                        <TextBlock Text="  Verify" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </ContentDialog.Resources>
+    <Grid  Name="LoadImage" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="99*"/>
+            <RowDefinition Height="232*"/>
+            <RowDefinition Height="30*"/>
+        </Grid.RowDefinitions>
+        <Image Source="{Binding DisplayedImage}" Grid.RowSpan="2" Grid.ColumnSpan="2" />
+        <!--<Button Style="{StaticResource verifyBtn}" HorizontalAlignment="Center" Click="ButtonBase_OnClick"
+                Background="Transparent" Grid.Row="2" Grid.Column="0" 
+                Height="32" Margin="0,10,0,0"  Width="85" />
+        <Button HorizontalAlignment="Center" Background="Transparent" Grid.Row="2" Grid.Column="1" Margin="0,10,0,0"  Height="32" Width="92" >
+            <StackPanel Orientation="Horizontal">
+                <Image Source="../Assets/cross.png" Width="20"/>
+                <TextBlock Text="  Cancel"></TextBlock>
+            </StackPanel>
+        </Button>-->
     </Grid>
-    
+
 </ContentDialog>
