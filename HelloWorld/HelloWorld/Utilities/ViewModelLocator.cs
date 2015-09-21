@@ -34,7 +34,7 @@ namespace TMissionMobile.Utilities
         }
 
         public ViewModelBase LoadSpecDialogViewModel
-        {
+        {   
             get { return SimpleIoc.Default.GetInstance<LoadSpecDialogViewModel>(); }
         }
 
