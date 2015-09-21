@@ -25,14 +25,19 @@ namespace TMissionMobile.Utilities
             }
 
             SimpleIoc.Default.Register<LoadOverviewModel>();
+            SimpleIoc.Default.Register<LoadSpecDialogViewModel>();
         }
         
         public ViewModelBase LoadOverviewModel
         {
             get { return SimpleIoc.Default.GetInstance<LoadOverviewModel>(); }
         }
-        
-        
-        
+
+        public ViewModelBase LoadSpecDialogViewModel
+        {
+            get { return SimpleIoc.Default.GetInstance<LoadSpecDialogViewModel>(); }
+        }
+
+
     }
 }

@@ -93,6 +93,9 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\checkmark.png" />
+    <Content Include="Assets\cross.png" />
+    <Content Include="Assets\homer-simpson.bmp" />
     <Content Include="Assets\Loads.PNG" />
     <Content Include="Assets\planeSide.jpg" />
     <Content Include="Assets\planeSideButtonNotSelected.jpg" />
@@ -107,18 +110,19 @@
     </Compile>
     <Compile Include="Common\Constants.cs" />
     <Compile Include="Properties\Annotations.cs" />
-    <Compile Include="Utilities\ExtendedSplash.xaml.cs">
+    <Compile Include="Viewmodels\ExtendedSplash.xaml.cs">
       <DependentUpon>ExtendedSplash.xaml</DependentUpon>
     </Compile>
     <Compile Include="Viewmodels\Dialogservice.cs" />
     <Compile Include="Viewmodels\LoadOverviewViewModel.cs" />
+    <Compile Include="Viewmodels\LoadSpecDialogViewModel.cs" />
     <Compile Include="Views\LoadOverviewView.xaml.cs">
       <DependentUpon>LoadOverviewView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\ViewModelLocator.cs" />
-    <Compile Include="Views\LoadSpecView.xaml.cs">
-      <DependentUpon>LoadSpecView.xaml</DependentUpon>
+    <Compile Include="Views\LoadSpecDialog.xaml.cs">
+      <DependentUpon>LoadSpecDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
@@ -151,7 +155,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Utilities\ExtendedSplash.xaml">
+    <Page Include="Viewmodels\ExtendedSplash.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -159,7 +163,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\LoadSpecView.xaml">
+    <Page Include="Views\LoadSpecDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
