@@ -13,15 +13,21 @@ namespace TMissionMobile.Common
         public static class FolderNames
         {
             public static readonly string AssetsFolder = "Assets";
+            public static readonly string AppxAssetsFolder = "ms-appx:///Assets/";
         }
 
-        public static class ImageUri
+        public static class PlaneImageUri
         {
             public static readonly Uri PlaneSide = new Uri("planeSide.jpg", UriKind.Relative);
             public static readonly Uri PlaneTop = new Uri("planeTop.jpg", UriKind.Relative);
-            
-                
         }
+
+        public static class ButtonImageUri
+        {
+            public static readonly string PlaneButtonNotSelected = "planeSideButtonNotSelected.jpg";
+            public static readonly string PlaneButtonSelected = "planeSideButtonSelected.jpg";
+        }
+
 
     }
 }

@@ -8,6 +8,7 @@ using System.Xml.Linq;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using Microsoft.VisualBasic;
 
 namespace TMissionMobile.Viewmodels
@@ -55,9 +56,39 @@ namespace TMissionMobile.Viewmodels
                 selectedImageUri = value;
                 RaisePropertyChanged();
 
-                CurrentImage = "ms-appx:///Assets/" + selectedImageUri;
+                CurrentImage = Common.Constants.FolderNames.AppxAssetsFolder + selectedImageUri;
             }
-        }      
+        }
+
+        private string loadImageUri = Common.Constants.FolderNames.AppxAssetsFolder + Common.Constants.ButtonImageUri.PlaneButtonNotSelected;
+
+        public string LoadImageUri 
+        {
+            get { return loadImageUri; }
+            set
+            {
+                loadImageUri = value;
+                RaisePropertyChanged();
+            }
+        }
+        private RelayCommand changeButtonCommand;
+
+        /// <summary>
+        /// Gets the ChangeButtonCommand
+        /// </summary>
+        public RelayCommand ChangeButtonCommand
+        {
+            get
+            {
+                return changeButtonCommand ?? (changeButtonCommand = new RelayCommand(
+                    ()=>
+                    {
+                        LoadImageUri = Common.Constants.FolderNames.AppxAssetsFolder + Common.Constants.ButtonImageUri.PlaneButtonSelected;
+                    }
+                    ));
+            }
+        }
+
 
         private ObservableCollection<string> imageUris;
 
@@ -72,7 +103,7 @@ namespace TMissionMobile.Viewmodels
         {
             ImageUris = new ObservableCollection<string>();
 
-            foreach (var p in typeof(Common.Constants.ImageUri).GetFields(BindingFlags.Static | BindingFlags.Public))
+            foreach (var p in typeof(Common.Constants.PlaneImageUri).GetFields(BindingFlags.Static | BindingFlags.Public))
             {
                 ImageUris.Add(p.GetValue(null).ToString());
             }
