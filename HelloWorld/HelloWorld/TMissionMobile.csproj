@@ -96,6 +96,7 @@
     <Content Include="Assets\checkmark.png" />
     <Content Include="Assets\cross.png" />
     <Content Include="Assets\homer-simpson.bmp" />
+    <Content Include="Assets\LoadOnPlane.png" />
     <Content Include="Assets\Loads.PNG" />
     <Content Include="Assets\planeSide.jpg" />
     <Content Include="Assets\planeSideButtonNotSelected.jpg" />
