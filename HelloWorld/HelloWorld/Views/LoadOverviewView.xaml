@@ -9,14 +9,18 @@
     mc:Ignorable="d"
     DataContext="{Binding Path=LoadOverviewModel, Source={StaticResource Locator}}" 
     >
+    <Page.Resources>
+        <utilities:TextConverter x:Key="MyTextConverter"/>
+    </Page.Resources>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Canvas Name="planeImage" >
             <Image Source="{Binding CurrentImage}" Width="600" Height="400"  />
             <Button Background="Transparent" Command="{Binding ChangeButtonCommand}" Canvas.Top="{Binding LoadImageTop}" Canvas.Left="{Binding LoadImageLeft}" >
-                <Image Width="50" Height="30" Source="{Binding LoadImageUri}"></Image>
+                <Image Width="50" Height="30"  Source="{Binding LoadImageUri}"></Image>
             </Button>
             <ListBox ItemsSource="{Binding ImageUris}" Name="viewLbx" Canvas.Top="310" SelectedItem="{Binding SelectedImageUri, Mode=TwoWay}">
-                <ListBox.ItemContainerStyle>
+            
+            <ListBox.ItemContainerStyle>
                     <Style TargetType="ListBoxItem">
                         <Setter Property="Template">
                             <Setter.Value>

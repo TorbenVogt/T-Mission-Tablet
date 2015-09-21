@@ -47,14 +47,31 @@ namespace TMissionMobile.Viewmodels
                 selectedImageUri = value;
                 RaisePropertyChanged();
 
-                CurrentImage = Common.Constants.FolderNames.AppxAssetsFolder + selectedImageUri;
+                UpdateImage();
+                
+            }
+        }
+
+        private void UpdateImage()
+        {
+            CurrentImage = Common.Constants.FolderNames.AppxAssetsFolder + selectedImageUri;
+            if (selectedImageUri == Common.Constants.PlaneImageUri.PlaneSide.ToString())
+            {
+                LoadImageUri = Common.Constants.FolderNames.AppxAssetsFolder + Common.Constants.ButtonImageUri.PlaneSideButtonNotSelected;
+                LoadImageTop = 220;
+                LoadImageLeft = 298;
+            }
+            else
+            {
+                LoadImageUri = Common.Constants.FolderNames.AppxAssetsFolder + Common.Constants.ButtonImageUri.PlaneTopButtonNotSelected;
+                LoadImageTop = 140;
+                LoadImageLeft = 295;
             }
         }
 
 
-
         private string loadImageUri = Common.Constants.FolderNames.AppxAssetsFolder +
-                                      Common.Constants.ButtonImageUri.PlaneButtonNotSelected;
+                                      Common.Constants.ButtonImageUri.PlaneSideButtonNotSelected;
                 
         /// <summary>
         /// the property that controls the uri for the plane button
@@ -112,8 +129,12 @@ namespace TMissionMobile.Viewmodels
                 return changeButtonCommand ?? (changeButtonCommand = new RelayCommand(
                     ()=>
                     {
-                        LoadImageUri = Common.Constants.FolderNames.AppxAssetsFolder + Common.Constants.ButtonImageUri.PlaneButtonSelected;
-                        
+                        if(selectedImageUri == Common.Constants.PlaneImageUri.PlaneSide.ToString())
+                            LoadImageUri = Common.Constants.FolderNames.AppxAssetsFolder + Common.Constants.ButtonImageUri.PlaneSideButtonSelected;
+                        else
+                        {
+                            LoadImageUri = Common.Constants.FolderNames.AppxAssetsFolder + Common.Constants.ButtonImageUri.PlaneTopButtonSelected;
+                        }
                         LoadDialog();
                     }
                     ));

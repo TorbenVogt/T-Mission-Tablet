@@ -113,6 +113,7 @@
     </Compile>
     <Compile Include="Common\Constants.cs" />
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Utilities\TextConverter.cs" />
     <Compile Include="Viewmodels\ExtendedSplash.xaml.cs">
       <DependentUpon>ExtendedSplash.xaml</DependentUpon>
     </Compile>

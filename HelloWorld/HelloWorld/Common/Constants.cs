@@ -24,8 +24,13 @@ namespace TMissionMobile.Common
 
         public static class ButtonImageUri
         {
-            public static readonly string PlaneButtonNotSelected = "planeSideButtonNotSelected.jpg";
-            public static readonly string PlaneButtonSelected = "planeSideButtonSelected.jpg";
+            public static readonly string PlaneSideButtonNotSelected = "planeSideButtonNotSelected.jpg";
+            public static readonly string PlaneSideButtonSelected = "planeSideButtonSelected.jpg";
+
+            public static readonly string PlaneTopButtonNotSelected = "LoadOnPlaneGreen.png";
+            public static readonly string PlaneTopButtonSelected = "LoadOnPlaneRed.png";
+
+
         }
 
 
