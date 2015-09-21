@@ -13,7 +13,9 @@ namespace TMissionMobile.Utilities
         {
             if (value is string && !string.IsNullOrEmpty(value.ToString()))
             {
-                return new string('*', value.ToString().Length - 1) + value.ToString().Last().ToString();
+                string newString = (string)value;
+                var b = newString.Substring(5, newString.Length-9);
+                return b;
             }
             return string.Empty;
         }
