@@ -9,10 +9,11 @@
     PrimaryButtonText="Button1"
     SecondaryButtonText="Back"
     PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
-    SecondaryButtonClick="ContentDialog_SecondaryButtonClick">
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick"
+    DataContext="{Binding Path=LoadSpecDialogViewModel, Source={StaticResource Locator}}" >
 
-    <Grid Background="#F2F2F2" >
-        <Image Width="400" Height="400" Name="LoadsSpecs" Source="../Assets/Loads.PNG" Margin="0 25 0 0"/>
+    <Grid Background="#F2F2F2" Name="LoadImage" >
+        <Image Width="400" Height="400" Source="{Binding DisplayedImage}" Margin="0 25 0 0"/>
     </Grid>
     
 </ContentDialog>
